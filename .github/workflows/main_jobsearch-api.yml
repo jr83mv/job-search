@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js app to Azure Web App - jobsearch-api
+name: Build and deploy Nest.js app to Azure Web App - jobsearch-api
 
 on:
   push:
@@ -19,7 +16,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v1
         with:
-          node-version: '18.x'
+          node-version: '14.x'
 
       - name: npm install, build, and test
         run: |
@@ -53,4 +50,4 @@ jobs:
           app-name: 'jobsearch-api'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EC8086F76BC947EB8496AF3612DEB6D2 }}
-          package: .
+          package: ${{ env.GITHUB_WORKSPACE }}/dist
