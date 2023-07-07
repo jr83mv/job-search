@@ -24,7 +24,7 @@ jobs:
       - name: Build backend
         run: |
           cd backend  
-          nest start
+          npm start
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
