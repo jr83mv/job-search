@@ -1,0 +1,21 @@
+{
+  "name": "job-search",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pnpm run start:frontend && pnpm run start:backend",
+    "start:frontend": "cd frontend && pnpm start",
+    "start:backend": "cd backend && nest start",
+    "start:dev": "pnpm run start:dev:frontend && pnpm run start:dev:backend",
+    "start:dev:frontend": "cd frontend && pnpm start",
+    "start:dev:backend": "cd backend && nest start --watch"
+  },
+  "keywords": [],
+  "author": "san",
+  "license": "ISC"
+}
