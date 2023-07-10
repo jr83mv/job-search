@@ -14,7 +14,9 @@ async function bootstrap() {
   const corsOptions: CorsOptions = {
     origin: 'https://job-search-frontend-nu.vercel.app', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace'],
+    credentials:true,            
+    optionsSuccessStatus:200,
+    allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace','Origin','Accept'],
   };
   app.enableCors(corsOptions);
   app.use(cors(corsOptions));
