@@ -15,15 +15,15 @@ function Card(props: any) {
                 </div>
                 <img src="./skillMatchIcon.png" alt="" />
             </div>
-            <div className="flex bg-slate-600 px-10 gap-40 rounded-b-xl py-2 flex-row justify-between">
+            <div className="flex bg-slate-600 px-10 gap-40 rounded-b-xl py-2 flex-row justify-between items-center">
                 <div className="flex text-white items-center gap-2">
                     <div>Posted {daysSincePosted(props.data.postedDate)} day ago</div>
                     <div className="text-3xl">•</div>
                     <div>{props.data.applicants} Applicants</div>
                 </div>
-                <div className="flex gap-10">
-                    <button className="bg-green-400 rounded-[47px] text-white text-lg py-1 px-3">APPLY NOW</button>
-                    <img src="./saveIcon.png" alt="" />
+                <div className="flex gap-10 items-center">
+                    <button className="bg-green-400 rounded-[47px] text-white text-sm py-1 px-2">APPLY NOW</button>
+                    <img src="./saveIcon.png" alt="" className="w-[20px] h-[30px]" />
                 </div>
             </div>
         </div>

@@ -25,8 +25,8 @@ function Navbar(props:any) {
       </div>
       <div className="flex h-[35px] gap-[20px]">
         <LanguageSelector />
-        <img src="./notification.png" alt="" className="" />
-        <img src="./user.png" alt="" className="" />
+        <img src="./notification.png" alt="" className="w-[30px] h-[30px]" />
+        <img src="./user.png" alt="" className="w-[30px] h-[30px]" />
       </div>
     </div>
   );

@@ -1,9 +1,10 @@
-export type FilterFields = {
-    education: Set<string>;
-    salary: Set<number>;
-    company: Set<string>;
-    postedDate: Set<string>;
-    experience: Set<number>;
-    skills: Set<string>;
-    location: Set<string>;
-  };
+export class FilterFields {
+  education = new Set<string>();
+  location = new Set<string>();
+  postedDate = new Set<string>();
+  experience = new Set<number>();
+  skills = new Set<string>();
+  salary = new Set<number>();
+  company = new Set<string>();
+
+};

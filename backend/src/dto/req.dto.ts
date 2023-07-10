@@ -1,19 +1,23 @@
-import { IsNumber, IsObject, IsString } from 'class-validator';
+import { IsNumber, IsObject, IsOptional, IsString } from 'class-validator';
 
-
-export class ReqDto{
+export class ReqDto {
   @IsObject()
-  filter: object;
+  @IsOptional()
+  filter: object = {};
 
   @IsObject()
-  sort: object;
+  @IsOptional()
+  sort: object = {};
 
   @IsString()
-  searchQuery:string;
+  @IsOptional()
+  searchQuery: string = '';
 
   @IsNumber()
-  page:number;
+  @IsOptional()
+  page: number = 1;
 
   @IsNumber()
-  pageSize:number;
+  @IsOptional()
+  pageSize: number = 10;
 }

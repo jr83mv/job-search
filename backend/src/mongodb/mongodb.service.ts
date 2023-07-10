@@ -2,45 +2,47 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Position, PositionDocument } from '../schema/position.schema';
+import { FilterFieldKeys } from '../types/filterFieldKeys';
 
 @Injectable()
 export class MongodbService {
 
-  constructor(@InjectModel(Position.name) private readonly positionModel: Model < Position > ){}
+  constructor(@InjectModel(Position.name) private readonly positionModel: Model<PositionDocument>) {}
 
-  async findAll(body:any):Promise<any>{
-    return await this.positionModel.find()
-      .exec();
+  /**
+   * Find all positions
+   * @param body - Request body
+   * @returns Promise resolving to all positions
+   */
+  async findAll(body: any): Promise<any> {
+    return this.positionModel.find().exec();
   }
 
-  async findAllWithFilter(filter: any, sort: any,searchQuery: string,page:number,pageSize:number):Promise<any>{
-    let query=  this.positionModel.find();
-    // console.log(query)
-    if (filter) {
-      if (filter.education) {
-        query=query.where('education').equals(filter.education);
-      }
-      if (filter.location) {
-        query=query.where('location').equals(filter.location);
-      }
-      if (filter.skills) {
-        query=query.where('skills').in(filter.skills);
-      }
-      if (filter.company) {
-        query=query.where('company').equals(filter.company);
-      }
-      if (filter.experience) {
-        query=query.where('experience').equals(filter.education);
-      }
+  /**
+   * Find positions with filters
+   * @param filter - Filter object
+   * @param sort - Sort object
+   * @param searchQuery - Search query
+   * @param page - Page number
+   * @param pageSize - Number of items per page
+   * @returns Promise resolving to filtered positions
+   */
+  async findAllWithFilter(filter: any, sort: any, searchQuery: string, page: number, pageSize: number): Promise<any> {
+    let query = this.positionModel.find();
 
+    if (filter) {
+      FilterFieldKeys.map((key) => {
+        if (filter[key]) {
+          query = query.where(key).equals(filter[key]);
+        }
+      });
     }
 
     if (searchQuery) {
       query = query.where({ $text: { $search: searchQuery } });
     }
-
     if (sort) {
-      query.sort(sort);
+      query = query.sort(sort);
     }
 
     if (page && pageSize) {
@@ -51,9 +53,12 @@ export class MongodbService {
     return await query.exec();
   }
 
-  async findAllWithSearch(quer:string):Promise<any>{
-    return await this.positionModel
-    .find({ $text: { $search: quer } })
-    .exec();
+  /**
+   * Find positions with search query
+   * @param query - Search query
+   * @returns Promise resolving to positions matching the search query
+   */
+  async findAllWithSearch(query: string): Promise<any> {
+    return await this.positionModel.find({ $text: { $search: query } }).exec();
   }
 }

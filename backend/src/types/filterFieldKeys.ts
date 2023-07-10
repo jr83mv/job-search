@@ -1,0 +1,1 @@
+export const FilterFieldKeys= ["company","location","postedDate","education","experience","salary","skills"];

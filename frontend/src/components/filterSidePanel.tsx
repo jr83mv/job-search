@@ -4,17 +4,17 @@ function FilterSidePanel(props: any) {
     const entries = Object.entries(props.data ? props.data : []);
 
     return (
-        <div className="gap-5 flex flex-col px-10 border rounded-xl py-3 w-[32%]">
+        <div className="gap-5 flex flex-col px-10 border rounded-xl py-3 w-[30%] h-[90vh]">
             <div className="flex gap-40 items-center justify-between">
                 <div className="font-bold">Filter by</div>
                 <button className="font-bold">Clear</button>
             </div>
-            <div className="flex gap-10 flex-wrap overflow-y-auto h-[65%]">
+            <div className="flex gap-10 flex-col overflow-y-auto h-[88vh]">
 
                 {entries?.map((fieldsData: any) => {
                     return (<div className="flex flex-col">
                         <p className="font-semibold">{fieldsData[0]}</p>
-                        {fieldsData[1]?.map((fieldData: any) => (
+                        {fieldsData[1]?.slice(0, 4).map((fieldData: any) => (
                             <FieldsFilter data={fieldData} data1={props.data1} key1={fieldsData} />
                         ))}
                     </div>)

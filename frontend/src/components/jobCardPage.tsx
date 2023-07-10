@@ -25,14 +25,14 @@ function JobCardPage(props: any) {
       };
 
     return (
-        <div className="border rounded-xl px-10 py-3 items-center">
+        <div className="border rounded-xl px-10 py-3 items-center h-[90vh]">
             <div className="flex gap-64">
                 <div className="">
                     <div className="font-bold"> SEARCH RESULTS /JOBS - {cardsData.length} results</div>
                 </div>
                 <div className="flex gap-3 items-center">
                     <div className="font-bold">Sort by </div>
-                    <select name="sort" id="cars" value={selectedValue} onChange={handleSelectChange}>
+                    <select name="sort" id="cars" value={selectedValue} onChange={handleSelectChange} >
                         <option value='{"postedDate":1}'>Date ⬆</option>
                         <option value='{"postedDate":-1}'>Date ⬇</option>
                         <option value='{"name":1}'>Name ⬆</option>
@@ -40,7 +40,7 @@ function JobCardPage(props: any) {
                     </select>
                 </div>
             </div>
-            <div className="overflow-y-auto h-[70%]">
+            <div className="overflow-y-auto h-[80vh]">
             {cardsData.map((cardData:JSON)=>(
                     <Card data={cardData} />
                 ))}
