@@ -11,7 +11,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const corsOptions: CorsOptions = {
-    origin: 'http://localhost:3001', 
+    origin: 'https://job-search-frontend-nu.vercel.app', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace'],
   };
