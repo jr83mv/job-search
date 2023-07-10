@@ -25,6 +25,7 @@ function MainPage(props: any) {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',mode: 'no-cors',
           credentials: 'include',
+          Origin:'https://job-search-frontend-nu.vercel.app/'
         },
       })
         .then((response) => response.json())
