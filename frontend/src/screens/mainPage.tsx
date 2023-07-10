@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import FilterSidePanel from "../components/filterSidePanel";
 import JobCardPage from "../components/jobCardPage";
 import Navbar from "../components/navbar";
+import React from "react";
 
 function MainPage(props: any) {
 

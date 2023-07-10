@@ -1,3 +1,5 @@
+import React from "react";
+
 function Card(props: any) {
     const daysSincePosted = (postedDate: string) => {
         return Math.round((new Date().getTime() - new Date(postedDate).getTime()) / (1000 * 3600 * 24));

@@ -1,3 +1,4 @@
+import React from "react";
 import FieldsFilter from "./fieldsFilter";
 
 function FilterSidePanel(props: any) {

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './languageSelector';
 import { useState } from 'react';
+import React from 'react';
 
 function Navbar(props:any) {
   const { t } = useTranslation();
