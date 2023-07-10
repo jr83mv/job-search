@@ -23,11 +23,11 @@ function MainPage(props: any) {
         method: 'POST',
         body: JSON.stringify(reqBody),
         headers: {
-          Origin:'https://job-search-frontend-nu.vercel.app',
+          'origin':'https://job-search-frontend-nu.vercel.app',
           'Content-type': 'application/json; charset=UTF-8',
-          mode: 'no-cors',
-          credentials: 'include',
-          Host:'vercel.app'
+          'mode': 'no-cors',
+          'credentials': 'include',
+          'host':'vercel.app'
         },
       })
         .then((response) => response.json())
