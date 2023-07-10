@@ -23,7 +23,8 @@ function MainPage(props: any) {
         method: 'POST',
         body: JSON.stringify(reqBody),
         headers: {
-          'Content-type': 'application/json; charset=UTF-8',mode: 'no-cors',
+          'Content-type': 'application/json; charset=UTF-8',
+          mode: 'no-cors',
           credentials: 'include',
           Origin:'https://job-search-frontend-nu.vercel.app/'
         },
