@@ -11,11 +11,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const corsOptions: CorsOptions = {
-    origin: ['https://job-search-frontend-nu.vercel.app','*','https://job-search-frontend-mz19m6p6m-jr83mv.vercel.app'], 
+    origin: '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials:true,            
     optionsSuccessStatus:200,
-    allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace','Origin','Accept'],
+    allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace','Origin','Accept','*'],
   };
   app.enableCors(corsOptions);
   // app.use(cors(corsOptions));
