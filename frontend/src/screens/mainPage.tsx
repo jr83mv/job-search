@@ -19,17 +19,11 @@ function MainPage(props: any) {
       setSearchData(searchData);
       console.log(searchData)
       let reqBody = { filter: selectedFilterData, sort: sortData, searchQuery: searchData,pageSize:10,page:pageNo };
-      const response = await fetch('http://localhost:3000/positions-filter', {
+      const response = await fetch('https://job-search-api-six.vercel.app/positions-filter', {
         method: 'POST',
         body: JSON.stringify(reqBody),
-        // mode: "cors",
         headers: {
-          // 'origin':'https://job-search-frontend-mz19m6p6m-jr83mv.vercel.app',
           "Content-Type": "application/json",
-          // 'credentials': 'include',
-          // 'withCredentials': 'true',
-          // 'host':'vercel.app',
-          // 'accept': 'application/json',
         },
       })
         .then((response) => response.json())
