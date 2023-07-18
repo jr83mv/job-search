@@ -8,16 +8,16 @@ require('dotenv').config();
 
 async function bootstrap() {
 
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule,{cors: true,});
 
-  const corsOptions: CorsOptions = {
-    origin: '*', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE','*'],
-    credentials:true,            
-    optionsSuccessStatus:200,
-    allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace','Origin','Accept','*'],
-  };
-  app.enableCors(corsOptions);
+  // const corsOptions: CorsOptions = {
+  //   origin: '*', 
+  //   methods: ['GET', 'POST', 'PUT', 'DELETE','*'],
+  //   credentials:true,            
+  //   optionsSuccessStatus:200,
+  //   allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace','Origin','Accept','*'],
+  // };
+  // app.enableCors();
   // app.use(cors(corsOptions));
 
   const config = new DocumentBuilder()
