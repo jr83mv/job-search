@@ -22,7 +22,7 @@ function MainPage(props: any) {
       const response = await fetch('https://job-search-api-six.vercel.app/positions-filter', {
         method: 'POST',
         body: JSON.stringify(reqBody),
-        mode: "cors",
+        // mode: "cors",
         headers: {
           // 'origin':'https://job-search-frontend-mz19m6p6m-jr83mv.vercel.app',
           'Content-type': 'application/json; charset=UTF-8',
