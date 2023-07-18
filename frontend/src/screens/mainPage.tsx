@@ -21,6 +21,9 @@ function MainPage(props: any) {
       let reqBody = { filter: selectedFilterData, sort: sortData, searchQuery: searchData,pageSize:10,page:pageNo };
       const response = await fetch('https://job-search-api-six.vercel.app/positions-filter', {
         method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(reqBody),
         // mode: "cors",
         // headers: {
