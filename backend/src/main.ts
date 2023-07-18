@@ -17,7 +17,13 @@ async function bootstrap() {
     optionsSuccessStatus:200,
     allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace','Origin','Accept','*'],
   };
-  app.enableCors(corsOptions);
+  app.enableCors({
+    origin: '*', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE','*'],
+    // credentials:true,            
+    // optionsSuccessStatus:200,
+    allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace','Origin','Accept','*'],
+  });
   // app.use(cors(corsOptions));
 
   const config = new DocumentBuilder()
