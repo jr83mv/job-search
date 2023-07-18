@@ -10,21 +10,18 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule);
 
-  const corsOptions: CorsOptions = {
-    origin: '*', 
-    methods: '*',
-    credentials:true,            
-    optionsSuccessStatus:200,
-    allowedHeaders: '*',
-  };
+  // const corsOptions: CorsOptions = {
+  //   origin: '*', 
+  //   methods: '*',
+  //   credentials:true,            
+  //   optionsSuccessStatus:200,
+  //   allowedHeaders: '*',
+  // };
   app.enableCors({
     origin: '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE','*'],
-    // credentials:true,            
-    // optionsSuccessStatus:200,
     allowedHeaders: ['Content-Type', 'Authorization','baggage','sentry-trace','Origin','Accept','*'],
   });
-  // app.use(cors(corsOptions));
 
   const config = new DocumentBuilder()
     .setTitle('job-search')
