@@ -27,7 +27,8 @@ function MainPage(props: any) {
           'Content-type': 'application/json; charset=UTF-8',
           'credentials': 'include',
           'withCredentials': 'true',
-          'host':'vercel.app'
+          'host':'vercel.app',
+          'accept': 'application/json',
         },
       })
         .then((response) => response.json())
