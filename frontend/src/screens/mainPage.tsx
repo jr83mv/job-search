@@ -25,7 +25,6 @@ function MainPage(props: any) {
         headers: {
           'origin':'https://job-search-frontend-nu.vercel.app',
           'Content-type': 'application/json; charset=UTF-8',
-          'mode': 'no-cors',
           'credentials': 'include',
           'host':'vercel.app'
         },
