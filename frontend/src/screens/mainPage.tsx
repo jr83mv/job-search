@@ -26,6 +26,7 @@ function MainPage(props: any) {
           // 'origin':'https://job-search-frontend-mz19m6p6m-jr83mv.vercel.app',
           'Content-type': 'application/json; charset=UTF-8',
           'credentials': 'include',
+          'withCredentials': 'true',
           'host':'vercel.app'
         },
       })
