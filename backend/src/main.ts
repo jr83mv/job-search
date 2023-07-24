@@ -10,14 +10,12 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule);
 
-  // const corsOptions: CorsOptions = {
-  //   origin: '*', 
-  //   methods: '*',
-  //   credentials:true,            
-  //   optionsSuccessStatus:200,
-  //   allowedHeaders: '*',
-  // };
-  app.enableCors();
+
+  app.enableCors({
+    origin: '*', 
+    methods: '*',
+    allowedHeaders: '*',
+  });
 
   const config = new DocumentBuilder()
     .setTitle('job-search')
