@@ -17,11 +17,7 @@ async function bootstrap() {
   //   optionsSuccessStatus:200,
   //   allowedHeaders: '*',
   // };
-  app.enableCors({
-    origin: '*', 
-    methods: '*',
-    allowedHeaders: '*',
-  });
+  app.enableCors();
 
   const config = new DocumentBuilder()
     .setTitle('job-search')
