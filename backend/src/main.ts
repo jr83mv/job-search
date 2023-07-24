@@ -11,11 +11,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
 
-  app.enableCors({
-    origin: '*', 
-    methods: '*',
-    allowedHeaders: '*',
-  });
+  // app.enableCors({
+  //   origin: '*', 
+  //   methods: '*',
+  //   allowedHeaders: '*',
+  // });
 
   const config = new DocumentBuilder()
     .setTitle('job-search')
