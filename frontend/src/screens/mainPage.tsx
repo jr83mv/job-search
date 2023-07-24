@@ -19,7 +19,7 @@ function MainPage(props: any) {
       setSearchData(searchData);
       console.log(searchData)
       let reqBody = { filter: selectedFilterData, sort: sortData, searchQuery: searchData,pageSize:10,page:pageNo };
-      const response = await fetch('https://job-search-r7x5tsq2f-jr83mv.vercel.app/positions-filter', {
+      const response = await fetch('https://job-search-api-six.vercel.app/positions-filter', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
